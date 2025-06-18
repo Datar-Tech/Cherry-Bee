@@ -1,0 +1,16 @@
+{
+  "name": "Network Diagnostic Container",
+  "build": {
+    "dockerfile": "../Dockerfile"
+  },
+  "runArgs": [
+    "--privileged",
+    "--dns=8.8.8.8",
+    "--dns=1.1.1.1"
+  ],
+  "containerEnv": {
+    "DEBIAN_FRONTEND": "noninteractive"
+  },
+  "postCreateCommand": "echo 'Container created successfully! Run diagnostic commands manually if needed.'",
+  "remoteUser": "root"
+}
